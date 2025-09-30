@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-09-30T14:22:44.246318" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\thanawat\Desktop\Automate Testing\AACV\New folder\Login\login.robot">
+<test id="s1-t1" name="ตรวจสอบการเข้าสู่ระบบกรณีไม่กรอก Username และ Password" line="15">
+<kw name="Login Invalid" owner="loginSwagLabs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:22:44.462196" level="INFO">Opening browser 'Firefox' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-30T14:22:44.461993" elapsed="7.044431"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-30T14:22:51.506753" elapsed="0.271079"/>
+</kw>
+<if>
+<branch type="IF" condition="'${User}' != ''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-09-30T14:22:51.778353" elapsed="0.000033"/>
+</kw>
+<status status="NOT RUN" start="2025-09-30T14:22:51.778030" elapsed="0.000403"/>
+</branch>
+<status status="PASS" start="2025-09-30T14:22:51.777987" elapsed="0.000494"/>
+</if>
+<if>
+<branch type="IF" condition="'${Password}' != ''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-09-30T14:22:51.778710" elapsed="0.000028"/>
+</kw>
+<status status="NOT RUN" start="2025-09-30T14:22:51.778544" elapsed="0.000236"/>
+</branch>
+<status status="PASS" start="2025-09-30T14:22:51.778527" elapsed="0.000288"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:22:51.779238" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:22:51.778887" elapsed="0.099170"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:22:44.461402" elapsed="7.416815"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:22:51.886089" level="INFO">Current page contains text 'Epic sadface: Username is required'.</msg>
+<arg>${TEXT1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-30T14:22:51.878542" elapsed="0.007695"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:22:51.922738" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC_Login_001.png"&gt;&lt;img src="TC_Login_001.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC_Login_001.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-09-30T14:22:51.886553" elapsed="0.036341"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-30T14:22:51.923206" elapsed="2.837982"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:22:44.459697" elapsed="10.301879"/>
+</test>
+<test id="s1-t2" name="ตรวจสอบการเข้าสู่ระบบกรณีกรอกข้อมูลบางส่วน" line="21">
+<kw name="Login Invalid" owner="loginSwagLabs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:22:54.765063" level="INFO">Opening browser 'Firefox' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-30T14:22:54.764833" elapsed="6.186929"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-30T14:23:00.951960" elapsed="0.269338"/>
+</kw>
+<if>
+<branch type="IF" condition="'${User}' != ''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:01.221893" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:01.221663" elapsed="0.071075"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:01.221437" elapsed="0.071482"/>
+</branch>
+<status status="PASS" start="2025-09-30T14:23:01.221407" elapsed="0.071638"/>
+</if>
+<if>
+<branch type="IF" condition="'${Password}' != ''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-09-30T14:23:01.293595" elapsed="0.000027"/>
+</kw>
+<status status="NOT RUN" start="2025-09-30T14:23:01.293246" elapsed="0.000419"/>
+</branch>
+<status status="PASS" start="2025-09-30T14:23:01.293166" elapsed="0.000530"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:01.293941" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:01.293760" elapsed="0.101089"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-09-30T14:22:54.764455" elapsed="6.630560"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:01.403971" level="INFO">Current page contains text 'Epic sadface: Password is required'.</msg>
+<arg>${TEXT2}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-30T14:23:01.395311" elapsed="0.008756"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:01.439457" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC_Login_002.png"&gt;&lt;img src="TC_Login_002.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC_Login_002.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-09-30T14:23:01.404319" elapsed="0.035300"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-30T14:23:01.439933" elapsed="2.765068"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:22:54.762358" elapsed="9.443000"/>
+</test>
+<test id="s1-t3" name="ตรวจสอบการเข้าสู่ระบบกรณีกรอกข้อมูลไม่ถูกต้อง" line="28">
+<kw name="Login Invalid" owner="loginSwagLabs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:04.207506" level="INFO">Opening browser 'Firefox' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-30T14:23:04.207362" elapsed="6.085261"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-30T14:23:10.292893" elapsed="0.269935"/>
+</kw>
+<if>
+<branch type="IF" condition="'${User}' != ''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:10.563407" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:10.563205" elapsed="0.087280"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:10.562975" elapsed="0.087605"/>
+</branch>
+<status status="PASS" start="2025-09-30T14:23:10.562945" elapsed="0.087841"/>
+</if>
+<if>
+<branch type="IF" condition="'${Password}' != ''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:10.651349" level="INFO">Typing text '12345678' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:10.651135" elapsed="0.023058"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:10.650891" elapsed="0.023485"/>
+</branch>
+<status status="PASS" start="2025-09-30T14:23:10.650863" elapsed="0.023645"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:10.674926" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:10.674700" elapsed="0.093872"/>
+</kw>
+<arg>standard_user</arg>
+<arg>12345678</arg>
+<status status="PASS" start="2025-09-30T14:23:04.207129" elapsed="6.561552"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:10.789400" level="INFO">Current page contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<arg>${TEXT3}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-30T14:23:10.768957" elapsed="0.020543"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:10.836027" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC_Login_003.png"&gt;&lt;img src="TC_Login_003.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC_Login_003.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-09-30T14:23:10.789770" elapsed="0.046368"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-30T14:23:10.836444" elapsed="2.778022"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:04.205836" elapsed="9.409089"/>
+</test>
+<test id="s1-t4" name="ตรวจสอบการเข้าสู่ระบบกรณีกรอกผู้ใช้งานถูกล็อค" line="35">
+<kw name="Login Invalid" owner="loginSwagLabs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:13.617018" level="INFO">Opening browser 'Firefox' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-30T14:23:13.616877" elapsed="6.124919"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-30T14:23:19.741978" elapsed="0.277740"/>
+</kw>
+<if>
+<branch type="IF" condition="'${User}' != ''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:20.020414" level="INFO">Typing text 'locked_out_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:20.020192" elapsed="0.068138"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:20.019914" elapsed="0.068498"/>
+</branch>
+<status status="PASS" start="2025-09-30T14:23:20.019874" elapsed="0.068579"/>
+</if>
+<if>
+<branch type="IF" condition="'${Password}' != ''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:20.088925" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:20.088738" elapsed="0.024672"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:20.088526" elapsed="0.024973"/>
+</branch>
+<status status="PASS" start="2025-09-30T14:23:20.088503" elapsed="0.025042"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:20.113830" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:20.113659" elapsed="0.091560"/>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-09-30T14:23:13.616651" elapsed="6.588687"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:20.211691" level="INFO">Current page contains text 'Epic sadface: Sorry, this user has been locked out.'.</msg>
+<arg>${TEXT4}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-30T14:23:20.205716" elapsed="0.006077"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:20.243361" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC_Login_004.png"&gt;&lt;img src="TC_Login_004.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC_Login_004.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-09-30T14:23:20.212098" elapsed="0.031364"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-30T14:23:20.243718" elapsed="2.778268"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:13.615380" elapsed="9.406908"/>
+</test>
+<test id="s1-t5" name="ตรวจสอบการเข้าสู่ระบบกรณีกรอกข้อมูล SQLInjection" line="41">
+<kw name="Login SQLInjection" owner="loginSwagLabs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:23.024411" level="INFO">Opening browser 'Firefox' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-30T14:23:23.024172" elapsed="6.156473"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-30T14:23:29.180946" elapsed="0.264192"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:29.445569" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:29.445314" elapsed="0.076889"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:29.522600" level="INFO">Typing text '' OR 1=1--' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>' OR 1=1--</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:29.522395" elapsed="0.027740"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:29.550569" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:29.550353" elapsed="0.092084"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:23.023792" elapsed="6.618758"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:29.647866" level="INFO">Current page contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<arg>${TEXT3}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-30T14:23:29.642813" elapsed="0.005143"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:29.681415" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC_Login_005.png"&gt;&lt;img src="TC_Login_005.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC_Login_005.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-09-30T14:23:29.648208" elapsed="0.033383"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-30T14:23:29.681952" elapsed="2.803550"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:23.022616" elapsed="9.463182"/>
+</test>
+<test id="s1-t6" name="ตรวจสอบการเข้าสู่ระบบกรณีกรอกเบอร์โทรหรือที่อยู่อีเมลและรหัสผ่านถูกต้อง" line="47">
+<kw name="Login Valid" owner="loginSwagLabs">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:32.488815" level="INFO">Opening browser 'Firefox' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-30T14:23:32.488555" elapsed="6.106510"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-30T14:23:38.595243" elapsed="0.264327"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:38.860070" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:38.859828" elapsed="0.067440"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:38.927839" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:38.927522" elapsed="0.021897"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:38.949779" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-30T14:23:38.949596" elapsed="0.105076"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:32.488207" elapsed="6.566567"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-09-30T14:23:39.108743" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC_Login_006.png"&gt;&lt;img src="TC_Login_006.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC_Login_006.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-09-30T14:23:39.054991" elapsed="0.053859"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-30T14:23:39.109159" elapsed="2.704125"/>
+</kw>
+<status status="PASS" start="2025-09-30T14:23:32.486264" elapsed="9.327261"/>
+</test>
+<status status="PASS" start="2025-09-30T14:22:44.248085" elapsed="57.565992"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="6" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
