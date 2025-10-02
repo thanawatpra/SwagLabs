@@ -26,7 +26,6 @@ Login Invalid
         Input Text    id=password         ${Password}
     END 
     Click Element       id=login-button
-    Wait Until Element Contains     xpath=//span[@data-test="title"]        Products        timeout=10s
 
 Login SQLInjection
     Open Browser        ${URL}              ${BROWSER}
@@ -34,3 +33,4 @@ Login SQLInjection
     Input Text          id=user-name        ${USER}
     Input Text          id=password         ' OR 1=1--
     Click Element       id=login-button
+    Wait Until Element Contains     xpath=//span[@data-test="title"]        Products        timeout=10s
