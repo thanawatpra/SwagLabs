@@ -11,8 +11,8 @@ ${PASSWORD}     secret_sauce
 Login Valid
     Open Browser        ${URL}              ${BROWSER}
     Maximize Browser Window
-    Input Text          id=user-name        ${USER}
-    Input Text          id=password         ${PASSWORD}
+    Input Text          id=user-name        standard_user
+    Input Text          id=password         secret_sauce
     Click Element       id=login-button
 
 Login Invalid
